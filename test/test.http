@@ -1,0 +1,18 @@
+@baseUrl=http://localhost:4004
+
+#Get metadata##
+GET {{baseUrl}}/odata/v4/processor/$metaData
+###
+
+
+#Get incidents#
+GET {{baseUrl}}/odata/v4/processor/Incidents 
+###
+
+#Get incidents#
+GET {{baseUrl}}/odata/v4/processor/Incidents?$filter=title eq 'Inverter not functional'
+###
+
+#Get customers#
+GET {{baseUrl}}/odata/v4/processor/Customers?$select=firstName&$select=lastName&$expand=incidents
+###
